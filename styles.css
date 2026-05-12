@@ -748,7 +748,7 @@ header {
 
 .accordion-item.active .accordion-body {
   padding: 0 24px 24px 24px;
-  max-height: 200px; /* Arbitrary large enough height */
+  max-height: 1000px; /* Large enough for long answers */
 }
 
 .accordion-body p {
@@ -945,6 +945,20 @@ footer {
     grid-template-columns: 1fr;
   }
   
+  .timeline::before {
+    left: 20px;
+  }
+  
+  .step-number {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+  
+  .timeline-step {
+    gap: 16px;
+  }
+
   .nocturnal-timeline {
     flex-direction: column;
     gap: 24px;
@@ -955,6 +969,49 @@ footer {
     gap: 24px;
     text-align: center;
   }
+
+  /* Specific fixes for new elements */
+  .sep-brand h2 {
+    font-size: 1.5rem !important;
+  }
+
+  .sep-brand {
+    height: 200px;
+  }
+
+  .dashboard-mockup {
+    padding: 12px;
+  }
+
+  .mockup-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pdf-mockup {
+    padding: 20px;
+  }
+
+  .pdf-header {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .pdf-logo {
+    order: -1;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+  
+  .section-title {
+    font-size: 2.2rem;
+  }
+
+  .cta-section h2 {
+    font-size: 2.5rem;
   }
 }
 
