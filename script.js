@@ -91,11 +91,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Scroll Animations (Intersection Observer)
-    const animatedElements = document.querySelectorAll('.fade-in, .slide-up, .feature-card, .problem-card, .price-card, .use-case-box, .timeline-step');
+    const animatedElements = document.querySelectorAll('.fade-in, .slide-up, .feature-card, .problem-card, .price-card, .use-case-box, .timeline-step, .tactical-separator');
     
     // Add slide-up class to those elements that don't have fade-in or slide-up yet
     animatedElements.forEach(el => {
-        if (!el.classList.contains('fade-in') && !el.classList.contains('slide-up')) {
+        if (!el.classList.contains('fade-in') && !el.classList.contains('slide-up') && !el.classList.contains('tactical-separator')) {
             el.classList.add('slide-up');
         }
     });
@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
                 // Optional: Stop observing once animated
-                observer.unobserve(entry.target);
+                // observer.unobserve(entry.target);
             }
         });
     }, {
@@ -115,4 +115,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     animatedElements.forEach(el => observer.observe(el));
+    
+    // Simple parallax effect for tactical separators
+    window.addEventListener('scroll', () => {
+        const separators = document.querySelectorAll('.tactical-separator');
+        separators.forEach(sep => {
+            const rect = sep.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                sep.classList.add('parallax-active');
+            } else {
+                sep.classList.remove('parallax-active');
+            }
+        });
+    });
 });
