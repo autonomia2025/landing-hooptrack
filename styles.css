@@ -931,8 +931,26 @@ footer {
     font-size: 3rem;
   }
   
-  .problem-cards, .comparison, .features-grid, .use-cases-grid, .pricing-grid, .pdf-grid {
+  .problem-cards, .features-grid, .use-cases-grid, .benefits-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .pricing-grid, .comparison, .pdf-grid {
     grid-template-columns: 1fr;
+  }
+
+  .problem-card, .feature-card, .use-case-box {
+    padding: 20px;
+  }
+
+  .problem-card i, .feature-card i {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+  }
+
+  .feature-card h3, .use-case-box h3 {
+    font-size: 1.2rem;
   }
   
   .use-case-box {
@@ -942,7 +960,8 @@ footer {
   }
   
   .benefits-list {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
   
   .timeline::before {
@@ -1001,6 +1020,14 @@ footer {
   }
 }
 
+/* Medium-Small Mobile Fixes */
+@media (max-width: 600px) {
+  .features-grid, .use-cases-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Small Mobile Fixes */
 @media (max-width: 480px) {
   .hero-text h1 {
     font-size: 2.5rem;
@@ -1012,6 +1039,14 @@ footer {
 
   .cta-section h2 {
     font-size: 2.5rem;
+  }
+
+  .problem-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .benefits-list {
+    grid-template-columns: 1fr;
   }
 }
 
