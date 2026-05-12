@@ -1168,7 +1168,7 @@ footer {
 .sep-intense {
     /* Pricing -> CTA final */
     height: 150px;
-    background: linear-gradient(to bottom, var(--bg-sec) 0%, rgba(232, 93, 4, 0.1) 50%, var(--bg-main) 100%);
+    background: linear-gradient(to bottom, var(--bg-main) 0%, rgba(232, 93, 4, 0.1) 50%, var(--bg-main) 100%);
     position: relative;
 }
 .sep-intense::before {
